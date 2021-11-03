@@ -1,5 +1,5 @@
-<% if (typeof(script) == 'undefined' && script) { %>
-    <script>
+<% if (typeof(script) !== 'undefined' && script) { %>
+    <!--script>
     var disqus_shortname = '<%= theme.comment.disqus %>';
     <% if (page.disqusId) { %>
     var disqus_identifier = '<%= page.disqusId || page.slug %>';
@@ -14,7 +14,7 @@
     dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-    </script>
+    </script-->
 <% } else { %>
     <div id="disqus_thread">
         <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
